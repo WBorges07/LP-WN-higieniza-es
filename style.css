@@ -1,0 +1,468 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Menu de Navegação */
+header {
+    background: #ffffff;
+    padding: 1rem 10%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #004aad;
+}
+
+.logo span {
+    color: #00c3ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #004aad;
+}
+
+/* Seção Hero (Banner Principal) */
+.hero {
+    background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 74, 173, 0.8)), url('https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: transform 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.05);
+}
+
+/* Seção de Serviços */
+#servicos {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+#servicos h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #004aad;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+.wpp-flutuante {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+/* Ajuste das imagens nos cards */
+.img-servico {
+    width: 100%;       /* Faz a imagem ocupar toda a largura do card */
+    height: 200px;     /* Define uma altura padrão */
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+    border-radius: 10px 10px 0 0; /* Arredonda apenas os cantos de cima */
+    margin-bottom: 15px;
+}
+
+.card {
+    padding: 0; /* Remove o padding interno para a foto encostar nas bordas */
+    overflow: hidden; /* Garante que a imagem não saia do arredondamento do card */
+}
+
+.card h4, .card p {
+    padding: 0 15px 15px 15px; /* Devolve o espaço apenas para o texto */
+}
+.img-servico {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Isso mantém a pessoa na foto sem esticar a imagem */
+    border-radius: 10px 10px 0 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.faixa-domicilio {
+    background-color: #f8f9fa; /* Um cinza bem clarinho para separar as seções */
+    color: #004aad;           /* Texto no azul da sua marca */
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 1.3rem;        /* Texto um pouco maior */
+    border-top: 2px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.faixa-domicilio strong {
+    color: #d32f2f;           /* Coloca o "Atendimento a domicílio" em vermelho escuro para destaque máximo */
+    text-transform: uppercase;
+}
+
+.faixa-domicilio i {
+    margin-right: 8px;
+}
+.destaque-pagamento {
+    background-color: #fff3cd; /* Um amarelo suave para dar destaque de "atenção" */
+    color: #856404;           /* Texto em tom marrom/dourado para legibilidade */
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #ffeeba;
+}
+
+.destaque-pagamento i {
+    margin-right: 10px;
+    color: #004aad;           /* Ícone no azul da sua marca */
+}
+
+.destaque-pagamento strong {
+    text-transform: uppercase;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.novo-logo {
+    height: 80px;      /* Define uma altura fixa elegante */
+    width: auto;       /* Mantém a proporção da imagem */
+    object-fit: contain;
+    padding: 5px 0;    /* Dá um respiro para o logo no topo */
+}
+
+/* Ajuste para o menu de navegação (Header) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background: white; /* Como o logo tem fundo branco, o header fica melhor em branco */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.novo-logo {
+    height: 120px;     /* Aumentamos de 80px para 120px */
+    width: auto;       /* Mantém a proporção original */
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+.novo-logo:hover {
+    transform: scale(1.05); /* O logo cresce levemente ao passar o mouse */
+}
+
+/* Garante que o cabeçalho se ajuste ao novo tamanho do logo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%; /* Aumentamos um pouco o respiro lateral */
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+header {
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center;    /* Centraliza na horizontal */
+    justify-content: center;
+    padding: 20px 0;
+    background: white;
+}
+
+.logo-link {
+    margin-bottom: 15px; /* Espaço entre o logo e o menu, se houver */
+}
+.secao-logo-central {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    height: 300px;           /* Defina uma altura para a seção */
+    width: 100%;
+}
+
+.novo-logo {
+    height: 150px;           /* Tamanho maior como você pediu */
+    width: auto;
+}
+.tabela-precos {
+    padding: 60px 10%;
+    background-color: #fdfdfd;
+    text-align: center;
+}
+
+.tabela-precos h3 {
+    color: #004aad;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.container-tabela {
+    margin-top: 30px;
+    overflow-x: auto; /* Garante que a tabela não quebre no celular */
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #004aad;
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+tr:hover {
+    background-color: #f1f7ff; /* Efeito visual ao passar o mouse */
+}
+
+td:last-child {
+    font-weight: bold;
+    color: #25d366; /* Cor verde para os preços */
+}
+.secao-beneficios {
+    padding: 60px 10%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.secao-beneficios h2 {
+    color: #004aad;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.secao-beneficios h3 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.descricao-inicial {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.item-beneficio {
+    padding: 30px;
+    background: #f8faff;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.item-beneficio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,74,173,0.1);
+}
+
+.item-beneficio i {
+    font-size: 2.5rem;
+    color: #004aad;
+    margin-bottom: 20px;
+}
+
+.item-beneficio h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.item-beneficio p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+}
+.secao-protecao-extra {
+    padding: 80px 10%;
+    background-color: #004aad; /* Azul da sua marca */
+    color: white; /* Texto branco para contraste */
+    text-align: center;
+}
+
+.secao-protecao-extra .titulo-destaque {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f1c40f; /* Amarelo para chamar atenção para a "Proteção Extra" */
+    margin-bottom: 10px;
+}
+
+.secao-protecao-extra .subtitulo-vendas {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.texto-apoio {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.lista-beneficios-protecao {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 30px;
+    text-align: left;
+}
+
+.card-protecao {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.1); /* Fundo branco transparente */
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-protecao i {
+    font-size: 2rem;
+    color: #f1c40f;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.card-protecao h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.card-protecao p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .lista-beneficios-protecao {
+        grid-template-columns: 1fr; /* Uma coluna só no celular */
+    }
+}
