@@ -466,3 +466,24 @@ td:last-child {
         grid-template-columns: 1fr; /* Uma coluna só no celular */
     }
 }
+.contato-whatsapp {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.link-tel {
+    text-decoration: none;
+    color: #25d366; /* Verde do WhatsApp */
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço entre o ícone e o número */
+    transition: 0.3s;
+}
+
+.link-tel:hover {
+    color: #128c7e; /* Tom mais escuro no hover */
+    transform: scale(1.05);
+}
