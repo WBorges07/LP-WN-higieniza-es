@@ -1,4 +1,6 @@
-/* Configurações Gerais */
+/* ============================================================
+   CONFIGURAÇÕES GERAIS E DARK MODE
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +8,23 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth; /* Suaviza o deslize ao clicar nos links do menu */
+}
+
 body {
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: #121212; /* Fundo principal escuro */
+    color: #e0e0e0; /* Texto claro para leitura */
     line-height: 1.6;
 }
 
-/* Menu de Navegação */
+/* ============================================================
+   MENU DE NAVEGAÇÃO
+   ============================================================ */
 header {
-    background: #ffffff;
-    padding: 1rem 10%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: #1a1a1a;
+    padding: 10px 5%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -26,14 +34,13 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.logo h1 {
-    color: #004aad;
-}
-
-.logo span {
-    color: #00c3ff;
+.novo-logo {
+    height: 80px;
+    width: auto;
 }
 
 nav ul {
@@ -47,18 +54,26 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #e0e0e0;
     font-weight: 600;
     transition: 0.3s;
 }
 
 nav ul li a:hover {
-    color: #004aad;
+    color: #00c3ff;
 }
 
-/* Seção Hero (Banner Principal) */
+/* Responsividade do Menu */
+@media (max-width: 768px) {
+    nav { flex-direction: column; gap: 10px; }
+    nav ul li { margin: 0 10px; }
+}
+
+/* ============================================================
+   SECÇÃO HERO (INÍCIO)
+   ============================================================ */
 .hero {
-    background: linear-gradient(rgba(0, 74, 173, 0.8), rgba(0, 74, 173, 0.8)), url('https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&q=80&w=1000');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&q=80&w=1000');
     background-size: cover;
     background-position: center;
     color: white;
@@ -66,9 +81,10 @@ nav ul li a:hover {
     text-align: center;
 }
 
-.hero h2 {
+.hero h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .btn-whatsapp {
@@ -80,410 +96,255 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     margin-top: 25px;
-    transition: transform 0.3s ease;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .btn-whatsapp:hover {
     transform: scale(1.05);
 }
 
-/* Seção de Serviços */
+/* ============================================================
+   FAIXAS INFORMATIVAS
+   ============================================================ */
+.faixa-domicilio {
+    background-color: #1a2635;
+    color: #00c3ff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 1.1rem;
+}
+
+.destaque-pagamento {
+    background-color: #2c2410;
+    color: #f1c40f;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ============================================================
+   SERVIÇOS E CARDS
+   ============================================================ */
 #servicos {
     padding: 60px 10%;
     text-align: center;
 }
 
-#servicos h3 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #004aad;
-}
-
 .cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
+    margin-top: 30px;
 }
 
 .card {
-    background: white;
-    padding: 30px;
+    background: #1e1e1e;
     border-radius: 15px;
     width: 300px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
     transition: 0.3s;
+    border: 1px solid #333;
 }
 
 .card:hover {
     transform: translateY(-10px);
+    border-color: #004aad;
 }
 
-.icon {
-    font-size: 40px;
-    display: block;
-    margin-bottom: 15px;
-}
-
-/* Rodapé */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-.wpp-flutuante {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-/* Ajuste das imagens nos cards */
-.img-servico {
-    width: 100%;       /* Faz a imagem ocupar toda a largura do card */
-    height: 200px;     /* Define uma altura padrão */
-    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
-    border-radius: 10px 10px 0 0; /* Arredonda apenas os cantos de cima */
-    margin-bottom: 15px;
-}
-
-.card {
-    padding: 0; /* Remove o padding interno para a foto encostar nas bordas */
-    overflow: hidden; /* Garante que a imagem não saia do arredondamento do card */
-}
-
-.card h4, .card p {
-    padding: 0 15px 15px 15px; /* Devolve o espaço apenas para o texto */
-}
 .img-servico {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Isso mantém a pessoa na foto sem esticar a imagem */
-    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    opacity: 0.8;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-.faixa-domicilio {
-    background-color: #f8f9fa; /* Um cinza bem clarinho para separar as seções */
-    color: #004aad;           /* Texto no azul da sua marca */
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 1.3rem;        /* Texto um pouco maior */
-    border-top: 2px solid #e0e0e0;
-    border-bottom: 2px solid #e0e0e0;
+.card h4 {
+    color: #fff;
+    padding: 15px;
 }
 
-.faixa-domicilio strong {
-    color: #d32f2f;           /* Coloca o "Atendimento a domicílio" em vermelho escuro para destaque máximo */
-    text-transform: uppercase;
+.card p {
+    padding: 0 15px 20px 15px;
+    color: #b0b0b0;
 }
 
-.faixa-domicilio i {
-    margin-right: 8px;
-}
-.destaque-pagamento {
-    background-color: #fff3cd; /* Um amarelo suave para dar destaque de "atenção" */
-    color: #856404;           /* Texto em tom marrom/dourado para legibilidade */
-    text-align: center;
-    padding: 10px;
-    font-size: 1.1rem;
-    border-bottom: 2px solid #ffeeba;
-}
-
-.destaque-pagamento i {
-    margin-right: 10px;
-    color: #004aad;           /* Ícone no azul da sua marca */
-}
-
-.destaque-pagamento strong {
-    text-transform: uppercase;
-}
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.novo-logo {
-    height: 80px;      /* Define uma altura fixa elegante */
-    width: auto;       /* Mantém a proporção da imagem */
-    object-fit: contain;
-    padding: 5px 0;    /* Dá um respiro para o logo no topo */
-}
-
-/* Ajuste para o menu de navegação (Header) */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-    background: white; /* Como o logo tem fundo branco, o header fica melhor em branco */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.novo-logo {
-    height: 120px;     /* Aumentamos de 80px para 120px */
-    width: auto;       /* Mantém a proporção original */
-    object-fit: contain;
-    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
-}
-
-.novo-logo:hover {
-    transform: scale(1.05); /* O logo cresce levemente ao passar o mouse */
-}
-
-/* Garante que o cabeçalho se ajuste ao novo tamanho do logo */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%; /* Aumentamos um pouco o respiro lateral */
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-header {
-    display: flex;
-    flex-direction: column; /* Organiza os itens em coluna */
-    align-items: center;    /* Centraliza na horizontal */
-    justify-content: center;
-    padding: 20px 0;
-    background: white;
-}
-
-.logo-link {
-    margin-bottom: 15px; /* Espaço entre o logo e o menu, se houver */
-}
-.secao-logo-central {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-    height: 300px;           /* Defina uma altura para a seção */
-    width: 100%;
-}
-
-.novo-logo {
-    height: 150px;           /* Tamanho maior como você pediu */
-    width: auto;
-}
+/* ============================================================
+   TABELA DE PREÇOS
+   ============================================================ */
 .tabela-precos {
     padding: 60px 10%;
-    background-color: #fdfdfd;
     text-align: center;
-}
-
-.tabela-precos h3 {
-    color: #004aad;
-    margin-bottom: 10px;
-    font-size: 2rem;
+    background: #161616;
 }
 
 .container-tabela {
-    margin-top: 30px;
-    overflow-x: auto; /* Garante que a tabela não quebre no celular */
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    overflow-x: auto; /* Permite scroll em telemóveis */
 }
 
 table {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
     border-collapse: collapse;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: #1e1e1e;
     border-radius: 10px;
     overflow: hidden;
 }
 
 th {
-    background-color: #004aad;
+    background: #004aad;
     color: white;
     padding: 15px;
-    text-transform: uppercase;
+    text-align: left;
 }
 
 td {
     padding: 15px;
-    border-bottom: 1px solid #eee;
-    color: #444;
+    border-bottom: 1px solid #333;
+    color: #e0e0e0;
+    text-align: left;
 }
 
-tr:hover {
-    background-color: #f1f7ff; /* Efeito visual ao passar o mouse */
-}
-
-td:last-child {
+.servico-principal {
+    background-color: rgba(0, 74, 173, 0.1);
     font-weight: bold;
-    color: #25d366; /* Cor verde para os preços */
+    color: #00c3ff;
 }
+
+.link-tel {
+    color: #25d366;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ============================================================
+   SECÇÃO DE BENEFÍCIOS
+   ============================================================ */
 .secao-beneficios {
     padding: 60px 10%;
-    background-color: #ffffff;
     text-align: center;
-}
-
-.secao-beneficios h2 {
-    color: #004aad;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.secao-beneficios h3 {
-    font-size: 2.2rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.descricao-inicial {
-    max-width: 800px;
-    margin: 0 auto 50px auto;
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.6;
 }
 
 .grid-beneficios {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 20px;
+    margin-top: 40px;
 }
 
 .item-beneficio {
-    padding: 30px;
-    background: #f8faff;
+    padding: 25px;
+    background: #1e1e1e;
     border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
-.item-beneficio:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,74,173,0.1);
+    border: 1px solid #333;
 }
 
 .item-beneficio i {
     font-size: 2.5rem;
-    color: #004aad;
-    margin-bottom: 20px;
+    color: #00c3ff;
+    margin-bottom: 15px;
 }
 
-.item-beneficio h4 {
-    font-size: 1.3rem;
-    color: #333;
+/* ============================================================
+   NOVA SECÇÃO - FAQ (PERGUNTAS FREQUENTES)
+   ============================================================ */
+.secao-faq {
+    padding: 60px 10%;
+    background-color: #161616;
+}
+
+.grid-faq {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.item-faq {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #00c3ff;
+    text-align: left;
+}
+
+.item-faq h4 {
+    color: #fff;
     margin-bottom: 10px;
 }
 
-.item-beneficio p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.4;
+.item-faq p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
 }
+
+/* ============================================================
+   IMPERMEABILIZAÇÃO (PROTEÇÃO EXTRA)
+   ============================================================ */
 .secao-protecao-extra {
     padding: 80px 10%;
-    background-color: #004aad; /* Azul da sua marca */
-    color: white; /* Texto branco para contraste */
+    background: #004aad;
+    color: white;
     text-align: center;
 }
 
-.secao-protecao-extra .titulo-destaque {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #f1c40f; /* Amarelo para chamar atenção para a "Proteção Extra" */
-    margin-bottom: 10px;
-}
-
-.secao-protecao-extra .subtitulo-vendas {
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-}
-
-.texto-apoio {
-    max-width: 800px;
-    margin: 0 auto 50px auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    opacity: 0.9;
-}
-
 .lista-beneficios-protecao {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas */
-    gap: 30px;
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .card-protecao {
     display: flex;
-    align-items: flex-start;
-    background: rgba(255, 255, 255, 0.1); /* Fundo branco transparente */
-    padding: 25px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 400px;
+    text-align: left;
 }
 
 .card-protecao i {
     font-size: 2rem;
     color: #f1c40f;
-    margin-right: 20px;
-    margin-top: 5px;
+    margin-right: 15px;
 }
 
-.card-protecao h4 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    color: #fff;
-}
-
-.card-protecao p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #e0e0e0;
-}
-
-/* Ajuste para celular */
-@media (max-width: 768px) {
-    .lista-beneficios-protecao {
-        grid-template-columns: 1fr; /* Uma coluna só no celular */
-    }
-}
-.contato-whatsapp {
-    margin: 20px 0;
+/* ============================================================
+   RODAPÉ E BOTÃO FLUTUANTE
+   ============================================================ */
+footer {
+    background: #0a0a0a;
+    color: #888;
     text-align: center;
+    padding: 30px;
 }
 
-.link-tel {
-    text-decoration: none;
-    color: #25d366; /* Verde do WhatsApp */
-    font-size: 1.5rem;
-    font-weight: bold;
+.wpp-flutuante {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Espaço entre o ícone e o número */
+    font-size: 30px;
+    z-index: 1000;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     transition: 0.3s;
 }
 
-.link-tel:hover {
-    color: #128c7e; /* Tom mais escuro no hover */
-    transform: scale(1.05);
+.wpp-flutuante:hover {
+    transform: scale(1.1);
 }
