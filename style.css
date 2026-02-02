@@ -9,12 +9,12 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Suaviza o deslize ao clicar nos links do menu */
+    scroll-behavior: smooth; 
 }
 
 body {
-    background-color: #121212; /* Fundo principal escuro */
-    color: #e0e0e0; /* Texto claro para leitura */
+    background-color: #121212; 
+    color: #e0e0e0; 
     line-height: 1.6;
 }
 
@@ -63,7 +63,6 @@ nav ul li a:hover {
     color: #00c3ff;
 }
 
-/* Responsividade do Menu */
 @media (max-width: 768px) {
     nav { flex-direction: column; gap: 10px; }
     nav ul li { margin: 0 10px; }
@@ -122,11 +121,28 @@ nav ul li a:hover {
     padding: 10px;
 }
 
+/* NOVO ESTILO: DESTAQUE CIDADE */
+.destaque-cidade {
+    background: #121212;
+    padding: 40px 10% 10px 10%;
+    text-align: center;
+}
+
+.destaque-cidade h2 {
+    color: #00c3ff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
 /* ============================================================
    SERVIÇOS E CARDS
    ============================================================ */
 #servicos {
-    padding: 60px 10%;
+    padding: 30px 10% 60px 10%;
     text-align: center;
 }
 
@@ -183,7 +199,7 @@ nav ul li a:hover {
     width: 100%;
     max-width: 800px;
     margin: 30px auto;
-    overflow-x: auto; /* Permite scroll em telemóveis */
+    overflow-x: auto; 
 }
 
 table {
