@@ -121,7 +121,6 @@ nav ul li a:hover {
     padding: 10px;
 }
 
-/* NOVO ESTILO: DESTAQUE CIDADE */
 .destaque-cidade {
     background: #121212;
     padding: 40px 10% 10px 10%;
@@ -266,7 +265,7 @@ td {
 }
 
 /* ============================================================
-   NOVA SECÇÃO - FAQ (PERGUNTAS FREQUENTES)
+   NOVA SECÇÃO - FAQ COM ANIMAÇÃO NO HOVER
    ============================================================ */
 .secao-faq {
     padding: 60px 10%;
@@ -282,15 +281,33 @@ td {
 
 .item-faq {
     background: #1e1e1e;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     border-left: 4px solid #00c3ff;
     text-align: left;
+    transition: all 0.4s ease; /* Controla a suavidade da animação */
+    cursor: default;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+/* ANIMAÇÃO AO PASSAR O MOUSE NO FAQ */
+.item-faq:hover {
+    transform: translateY(-8px); /* Eleva o card */
+    background: #252525; /* Escurece levemente o fundo */
+    border-left: 6px solid #f1c40f; /* Muda a cor da borda lateral para amarelo destaque */
+    box-shadow: 0 10px 20px rgba(0, 195, 255, 0.15); /* Adiciona brilho azul suave */
 }
 
 .item-faq h4 {
     color: #fff;
     margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.item-faq:hover h4 {
+    color: #00c3ff; /* Título muda de cor no hover */
 }
 
 .item-faq p {
